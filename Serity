@@ -1,5 +1,7 @@
 -- [Serity Hub Moblie] --
 
+require(game:GetService("ReplicatedStorage").Notification).new("<Color=White> Loading < Serity Hub > <Color=/>"):Display()
+
 -- [Auto Team] --
 
 if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end

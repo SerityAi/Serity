@@ -2424,8 +2424,54 @@ local MainRight = MainTab:AddPage()
 
 MainLeft:AddSeperator("Main")
     
-MainLeft:AddToggle("Auto Third Sea", _G.AutoThirdSea, function(Value)
-
+MainLeft:AddToggle("Auto Farm Level", _G.AutoFarmLevel, function(Value)
+	_G.AutoFarmLevel = Value
+	if Value == false then
+		wait(0.3)
+		TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+	end
+        spawn(function()
+            while wait() do
+                pcall(function()
+                    if _G.AutoFarmLevel then
+                        CheckQuest()
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                            TP(CFrameQuest)
+                            if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",Quest,LevelQuest)
+                            end
+                        elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                            TP(CFrameMon)
+                            if string.find(game.Players.LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,Mon) then
+                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                    if v.Name == Mon and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        repeat wait()
+                                            Haki()
+                                            EquipWeapon()
+                                            PosMon = v.HumanoidRootPart.CFrame
+                                            TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            v.Head.CanCollide = false
+                                            v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+                                            BringMob = true
+                                            FastAttack = true
+                                            game:GetService("VirtualUser"):CaptureController()
+                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
+                                        until not _G.AutoFarmLevel or v.Humanoid.Health <= 0 or not v.Parent
+                                        UnEquip()
+                                        BringMob = false
+                                        FastAttack = false
+                                    end
+                                end
+                            else
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
 end)
 
 MainRight:AddSeperator("Settings")

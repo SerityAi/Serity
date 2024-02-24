@@ -1585,7 +1585,7 @@ function BloxFruit()
 	end
 end
 
-_G.SelectWeapon == "Melee"
+_G.SelectWeapon = "Melee"
 
 function EquipWeapon()
     if _G.SelectWeapon == "Melee" then

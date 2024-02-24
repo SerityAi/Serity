@@ -1,6 +1,8 @@
--- [Ui] --
+-- [Load] -- 
 
-_G.AutoFarmLevel = true
+if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
+
+-- [Ui] --
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -666,6 +668,32 @@ end
 coroutine.wrap(QVGP_fake_script)()
 
 ---------------------------------------------------------------------
+
+-- [Auto Team] --
+
+pcall(function()
+    if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
+    	repeat wait()
+            if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main").ChooseTeam.Visible == true then
+                if _G.Team == "Pirate" then
+                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
+                        v.Function()
+	    			end
+                elseif _G.Team == "Marine" then
+                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do
+                        v.Function()
+                    end
+                else
+                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
+                        v.Function()
+                    end
+    			end
+            end
+        until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
+    end
+end)
+
+_G.AutoFarmLevel = true
 
 -- [Use Code] --
 
@@ -1604,6 +1632,8 @@ spawn(function()
 							if v.Name == Mon and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 								repeat wait()
 									Haki()
+									Melee()
+									PosMon = v.HumanoidRootPart.CFrame
 									TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 									v.HumanoidRootPart.CanCollide = false
 									v.Humanoid.WalkSpeed = 0
@@ -1613,7 +1643,7 @@ spawn(function()
 									FastAttack = true
 									game:GetService("VirtualUser"):CaptureController()
 									game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-								until not _G.AutoFarmLevel or v.Humanoid.Health <= 0 or not v.Parent
+								until v.Humanoid.Health <= 0 or not v.Parent
 								UnEquip()
 								BringMob = false
 								FastAttack = false

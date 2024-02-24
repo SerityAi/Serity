@@ -1585,6 +1585,18 @@ function BloxFruit()
 	end
 end
 
+_G.SelectWeapon == "Melee"
+
+function EquipWeapon()
+    if _G.SelectWeapon == "Melee" then
+		Melee()
+	elseif _G.SelectWeapon == "Sword" then
+		Sword()
+	elseif _G.SelectWeapon == "Blox Fruit" then
+		BloxFruit()   
+	end	
+end
+
 -- [Auto Farm] --
 
 spawn(function()
@@ -1604,7 +1616,7 @@ spawn(function()
 							if v.Name == Mon and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 								repeat wait()
 									Haki()
-									Melee()
+									EquipWeapon()
 									PosMon = v.HumanoidRootPart.CFrame
 									TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 									v.HumanoidRootPart.CanCollide = false
@@ -1639,88 +1651,66 @@ function CheckQuest()
 		CFrameMon = CFrame.new(1095, 55, 1572, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 		CFrameQuest = CFrame.new(1060, 16, 1549, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-		local Distance = (Vector3.new(1060, 16, 1549, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1060, 16, 1549, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Default")
-			wait(0.1)
-			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Default")
-			wait(3.8)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Default")
-			wait(0.1)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Default")
-			wait(0.1)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Default")
-			_G.NoClip = false
-		end
-
 	elseif MyLevel == 10 or MyLevel <= 89 then -- Gorilla [Lv. 20]
-        if _G.AutoFarmLevel then
-            pcall(function()
-                if game:GetService("Workspace").Enemies:FindFirstChild("Shanda") then
-                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                        if v.Name == "Shanda" and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                            repeat wait()
-                                Haki()
-                                Melee()
-                                PosMon = v.HumanoidRootPart.CFrame
-                                TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
-                                v.HumanoidRootPart.CanCollide = false
-                                v.Humanoid.WalkSpeed = 0
-                                v.Head.CanCollide = false
-                                v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                                BringMob = true
-                                FastAttack = true
-                                game:GetService("VirtualUser"):CaptureController()
-                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-                            until not _G.AutoFarmLevel or v.Humanoid.Health <= 0 or not v.Parent
-                            UnEquip()
-                            BringMob = false
-                            FastAttack = false
-                        end
-                    end
-                else 
-						local Distance = (Vector3.new(-7895, 5547, -380, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-						if Distance > 1000 then
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7910, 5545, -380)) -- Bypass Sky 2
-						end
-					TP(CFrame.new(-7688, 5601, -441, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-				end
-			end)
-		end
-
-	elseif MyLevel == 90 or MyLevel <= 119 then -- Gorilla [Lv. 20]
-        if _G.AutoFarmLevel then
-            pcall(function()
-				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PlayerHunter")
-				for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
-					if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,v.Name) then
-						repeat wait()
+		pcall(function()
+			if game:GetService("Workspace").Enemies:FindFirstChild("Shanda") then
+				for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+					if v.Name == "Shanda" and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                        repeat wait()
 							Haki()
-							Melee()
-							TP(v.HumanoidRootPart.CFrame * CFrame.new( 1,7,3))
-							local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-							if Distance < 10 then
-								game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
-								wait(0.1)
-								game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
-								wait(0.1)
-								game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
-								wait(0.1)
-								game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
-							end						
+							EquipWeapon()
+							PosMon = v.HumanoidRootPart.CFrame
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
+							v.HumanoidRootPart.CanCollide = false
+							v.Humanoid.WalkSpeed = 0
+							v.Head.CanCollide = false
 							v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-							game:GetService'VirtualUser':CaptureController()
-							game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-						until _G.AutoFarmLevel == false or v.Humanoid.Health <= 0 or not v.Parent
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+							BringMob = true
+							FastAttack = true
+							game:GetService("VirtualUser"):CaptureController()
+							game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
+						until v.Humanoid.Health <= 0 or not v.Parent
+						UnEquip()
+						BringMob = false
+						FastAttack = false
 					end
 				end
-			end)
-        end
+			else 
+					local Distance = (Vector3.new(-7895, 5547, -380, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+					if Distance > 1000 then
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7910, 5545, -380)) -- Bypass Sky 2
+					end
+				TP(CFrame.new(-7688, 5601, -441, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+			end
+		end)
+
+	elseif MyLevel == 90 or MyLevel <= 119 then -- Gorilla [Lv. 20]
+        pcall(function()
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PlayerHunter")
+			for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+				if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,v.Name) then
+					repeat wait()
+						Haki()
+						EquipWeapon()
+						TP(v.HumanoidRootPart.CFrame * CFrame.new( 1,7,3))
+						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+						if Distance < 10 then
+							game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
+							wait(0.1)
+							game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
+							wait(0.1)
+							game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
+							wait(0.1)
+							game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
+						end						
+						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+						game:GetService'VirtualUser':CaptureController()
+						game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+					until v.Humanoid.Health <= 0 or not v.Parent
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+				end
+			end
+		end)
 	
 	elseif MyLevel == 120 or MyLevel <= 149 then -- Chief Petty Officer [Lv. 120]
 		Mon = "Chief Petty Officer"
@@ -2043,7 +2033,7 @@ function CheckQuest()
 			_G.NoClip = false
 		end
 
-	elseif _G.AutoFarmLevel and game.Players.LocalPlayer.Data.Level.Value >= 700 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Saber") and not game.Players.LocalPlayer.Character:FindFirstChild("Saber") then -- Saber
+	elseif game.Players.LocalPlayer.Data.Level.Value >= 700 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Saber") and not game.Players.LocalPlayer.Character:FindFirstChild("Saber") then -- Saber
 		pcall(function()
 			if game:GetService("Workspace").Map.Jungle.Final.Part.Transparency == 0 then
 				if game:GetService("Workspace").Map.Jungle.QuestPlates.Door.Transparency == 0 then
@@ -2107,7 +2097,7 @@ function CheckQuest()
 										if v.Name == "Mob Leader" then
 											repeat wait()
 												Haki()
-												Melee()
+												EquipWeapon()
 												TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
@@ -2116,7 +2106,7 @@ function CheckQuest()
 												FastAttack = true
 												game:GetService("VirtualUser"):CaptureController()
 												game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-											until not _G.AutoSaber or v.Humanoid.Health <= 0 or not v.Parent
+											until v.Humanoid.Health <= 0 or not v.Parent
 											UnEquip()
 											FastAttack = false
 										end
@@ -2139,7 +2129,7 @@ function CheckQuest()
 						if v.Name == "Saber Expert" then
 							repeat wait()
 								Haki()
-								Melee()
+								EquipWeapon()
 								TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 								v.HumanoidRootPart.CanCollide = false
 								v.Humanoid.WalkSpeed = 0
@@ -2148,7 +2138,7 @@ function CheckQuest()
 								FastAttack = true
 								game:GetService("VirtualUser"):CaptureController()
 								game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-							until not _G.AutoSaber or v.Humanoid.Health <= 0 or not v.Parent
+							until v.Humanoid.Health <= 0 or not v.Parent
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ProQuestProgress","PlaceRelic")
 							UnEquip()
 							FastAttack = false
@@ -2158,7 +2148,7 @@ function CheckQuest()
 			end
     	end)
 		
-	elseif _G.AutoFarmLevel and game.Players.LocalPlayer.Data.Level.Value >= 700 and  game:GetService("Workspace").Map.Jungle.Final.Part.Transparency == 1  then -- Go To Second World
+	elseif game.Players.LocalPlayer.Data.Level.Value >= 700 and  game:GetService("Workspace").Map.Jungle.Final.Part.Transparency == 1  then -- Go To Second World
 		pcall(function()
 			if game.Workspace.Map.Ice.Door.Transparency == 0 then
 				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
@@ -2170,7 +2160,7 @@ function CheckQuest()
 						if v.Name == "Ice Admiral" and v.Humanoid.Health > 0 then
 							repeat wait()
 								Haki()
-								Melee()
+								EquipWeapon()
 								TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 								v.HumanoidRootPart.CanCollide = false
 								v.Humanoid.WalkSpeed = 0
@@ -2179,7 +2169,7 @@ function CheckQuest()
 								FastAttack = true
 								game:GetService("VirtualUser"):CaptureController()
 								game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-							until not _G.EnabledDressrosaQuest or v.Humanoid.Health <= 0 or not v.Parent
+							until v.Humanoid.Health <= 0 or not v.Parent
 							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
 							UnEquip()
 							FastAttack = false

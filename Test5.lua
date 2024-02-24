@@ -1590,16 +1590,25 @@ spawn(function()
 end)
 spawn(function()
     game:GetService("RunService").Heartbeat:Connect(function()
-        if
-        _G.AutoFarmLevel or _G.EnabledDressrosaQuest or _G.AutoFarmDevilFruitMastery or _G.AutoFarmGunMastery or _G.AutoFarmBosses or _G.AutoFarmObservation or _G.AutoFarmChests or _G.MobAura or
-        _G.AutoFarmMaterials or _G.AutoSharkSaw or _G.AutoSaber or _G.AutoTrident or _G.AutoPole or _G.AutoBisentoV2 or
-        _G.TeleportPlayers or _G.TeleportIsland or
-        _G.TweenToFruits or
-        _G.NoClip then
-            if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") then
-                setfflag("HumanoidParallelRemoveNoPhysics", "False")
-                setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
-                game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+		if  
+		_G.AutoFarmLevel or _G.EnabledDressrosaQuest or _G.AutoFarmDevilFruitMastery or _G.AutoFarmGunMastery or _G.AutoFarmBosses or _G.AutoFarmObservation or _G.AutoFarmChests or _G.MobAura or
+		_G.AutoFarmMaterials or _G.AutoSharkSaw or _G.AutoSaber or _G.AutoTrident or _G.AutoPole or _G.AutoBisentoV2 or
+		_G.TeleportPlayers or _G.TeleportIsland or
+		_G.TweenToFruits or
+		_G.NoClip then
+			if not game:GetService("Workspace"):FindFirstChild("LOL") then
+                local LOL = Instance.new("Part")
+                LOL.Name = "LOL"
+                LOL.Parent = game.Workspace
+                LOL.Anchored = true
+                LOL.Transparency = 1
+                LOL.Size = Vector3.new(30,-0.5,30)
+            elseif game:GetService("Workspace"):FindFirstChild("LOL") then
+                game.Workspace["LOL"].CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, -4.015, 0)
+			end
+        else
+			if game:GetService("Workspace"):FindFirstChild("LOL") then
+                game:GetService("Workspace"):FindFirstChild("LOL"):Destroy()
             end
         end
     end)

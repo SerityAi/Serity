@@ -1585,18 +1585,6 @@ function BloxFruit()
 	end
 end
 
-_G.SelectWeapon = "Melee"
-
-function EquipWeapon()
-    if _G.SelectWeapon == "Melee" then
-		Melee()
-	elseif _G.SelectWeapon == "Sword" then
-		Sword()
-	elseif _G.SelectWeapon == "Blox Fruit" then
-		BloxFruit()   
-	end	
-end
-
 -- [Auto Farm] --
 
 spawn(function()
@@ -1616,8 +1604,6 @@ spawn(function()
 							if v.Name == Mon and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 								repeat wait()
 									Haki()
-									EquipWeapon()
-									PosMon = v.HumanoidRootPart.CFrame
 									TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 									v.HumanoidRootPart.CanCollide = false
 									v.Humanoid.WalkSpeed = 0
@@ -1658,7 +1644,7 @@ function CheckQuest()
 					if v.Name == "Shanda" and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                         repeat wait()
 							Haki()
-							EquipWeapon()
+							Melee()
 							PosMon = v.HumanoidRootPart.CFrame
 							TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 							v.HumanoidRootPart.CanCollide = false
@@ -1676,10 +1662,10 @@ function CheckQuest()
 					end
 				end
 			else 
-					local Distance = (Vector3.new(-7895, 5547, -380, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-					if Distance > 1000 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7910, 5545, -380)) -- Bypass Sky 2
-					end
+				local Distance = (Vector3.new(-7895, 5547, -380, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+				if Distance > 1000 then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7910, 5545, -380)) -- Bypass Sky 2
+				end
 				TP(CFrame.new(-7688, 5601, -441, 1, 0, 0, 0, 1, 0, 0, 0, 1))
 			end
 		end)
@@ -1691,7 +1677,7 @@ function CheckQuest()
 				if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,v.Name) then
 					repeat wait()
 						Haki()
-						EquipWeapon()
+						Melee()
 						TP(v.HumanoidRootPart.CFrame * CFrame.new( 1,7,3))
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
@@ -2097,7 +2083,7 @@ function CheckQuest()
 										if v.Name == "Mob Leader" then
 											repeat wait()
 												Haki()
-												EquipWeapon()
+												Melee()
 												TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
@@ -2129,7 +2115,7 @@ function CheckQuest()
 						if v.Name == "Saber Expert" then
 							repeat wait()
 								Haki()
-								EquipWeapon()
+								Melee()
 								TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 								v.HumanoidRootPart.CanCollide = false
 								v.Humanoid.WalkSpeed = 0
@@ -2160,7 +2146,7 @@ function CheckQuest()
 						if v.Name == "Ice Admiral" and v.Humanoid.Health > 0 then
 							repeat wait()
 								Haki()
-								EquipWeapon()
+								Melee()
 								TP(v.HumanoidRootPart.CFrame * CFrame.new(0,40,0))
 								v.HumanoidRootPart.CanCollide = false
 								v.Humanoid.WalkSpeed = 0

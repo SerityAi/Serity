@@ -1584,15 +1584,6 @@ function BloxFruit()
 		end
 	end
 end
-function EquipWeapon()
-    if _G.SelectWeapon == "Melee" then
-		Melee()
-	elseif _G.SelectWeapon == "Sword" then
-		Sword()
-	elseif _G.SelectWeapon == "Blox Fruit" then
-		BloxFruit()   
-	end	
-end
 
 -- [Auto Farm] --
 

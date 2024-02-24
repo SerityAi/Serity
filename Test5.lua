@@ -1,5 +1,7 @@
 -- [Ui] --
 
+_G.AutoFarmLevel = true
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -847,6 +849,52 @@ end
 -- [Tween Service] --
 
 function TP(P)
+	Distance = (P.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+	if Distance < 100 then
+		Speed = 1000
+    elseif Distance < 200 then
+		Speed = 500
+    elseif Distance < 300 then
+		Speed = 400
+	elseif Distance < 500 then
+		Speed = 350
+	elseif Distance < 1000 then
+		Speed = 320
+    elseif Distance >= 1000 then
+		Speed = 320 
+    end
+
+    game:GetService("TweenService"):Create(
+		game.Players.LocalPlayer.Character.HumanoidRootPart,
+		TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
+		{CFrame = P}
+	):Play()
+end
+function TP2(P)
+	Distance = (P.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+	if Distance < 100 then
+		Speed = 1000
+    elseif Distance < 200 then
+		Speed = 500
+    elseif Distance < 300 then
+		Speed = 400
+	elseif Distance < 500 then
+		Speed = 350
+	elseif Distance < 1000 then
+		Speed = 320
+    elseif Distance >= 1000 then
+		Speed = 320 
+    end
+    game:GetService("TweenService"):Create(
+        game.Players.LocalPlayer.Character.HumanoidRootPart,
+        TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
+        {CFrame = P}
+    ):Play()
+    _G.NoClip = true
+    wait(Distance/Speed)
+    _G.NoClip = false
+end
+function TP(P)
     spawn(function()
 		pcall(function()
 			if game:GetService("Players").LocalPlayer:DistanceFromCharacter(P.Position) <= 250 then 
@@ -1548,11 +1596,6 @@ end
 
 -- [Auto Farm] --
 
-_G.AutoFarmLevel = true
-if Value == false then
-	wait(0.3)
-	TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-end
 spawn(function()
 	while wait() do
 		pcall(function()
@@ -1596,13 +1639,10 @@ spawn(function()
 	end
 end)
 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
-
-
 function CheckQuest()
     local MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
 	if MyLevel == 1 or MyLevel <= 9 then -- Bandit [Lv. 5]
-		Mon= "Bandit"
+		Mon = "Bandit"
 		Quest = "BanditQuest1"
 		LevelQuest = 1
 		CFrameMon = CFrame.new(1095, 55, 1572, 1, 0, 0, 0, 1, 0, 0, 0, 1)

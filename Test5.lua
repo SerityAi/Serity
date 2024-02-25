@@ -134,6 +134,13 @@ function Label(Text)
 	return LabelFunction
 end
 
+local args = {
+    [1] = "EnablePvp"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+
+
 local MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
 Stats = Label("Stats : ...")
 function UpdateStats()
@@ -786,10 +793,12 @@ function CheckQuest()
 					repeat wait()
 						Haki()
 						Melee()
-						TP(v.HumanoidRootPart.CFrame * CFrame.new( 1,7,3))
+						TP(v.HumanoidRootPart.CFrame * CFrame.new( 1,3,3))
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
 							FastAttack = true
+							game:GetService'VirtualUser':CaptureController()
+							game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 							game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
 							wait(0.1)
 							game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
@@ -799,8 +808,6 @@ function CheckQuest()
 							game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
 						end						
 						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-						game:GetService'VirtualUser':CaptureController()
-						game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 					until v.Humanoid.Health <= 0 or not v.Parent
 					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 				end

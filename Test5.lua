@@ -836,23 +836,6 @@ function CheckQuest()
 		CFrameMon = CFrame.new(5090, 40, 424, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 		CFrameQuest = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-		if Distance >= 1000 then
-			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
-			wait(3)
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
-			wait(0.1)
-			game.Players.LocalPlayer.Character.Humanoid.Health = 0
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
-			wait(3.8)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
-			wait(0.1)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
-			wait(0.1)
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Prison")
-			wait(3)
-		end
-
 	elseif MyLevel == 210 or MyLevel <= 249 then -- Dangerous Prisoner [Lv. 210]
 		Mon = "Dangerous Prisoner"
 		Quest = "PrisonerQuest"

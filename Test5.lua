@@ -821,8 +821,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-5038, 29, 4323, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5038, 29, 4323, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "MarineBase")
 			wait(0.1)
@@ -834,7 +832,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "MarineBase")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "MarineBase")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 150 or MyLevel <= 174 then -- Sky Bandit [Lv. 150]
@@ -846,8 +844,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Sky")
 			wait(0.1)
@@ -859,7 +855,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Sky")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Sky")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 175 or MyLevel <= 189 then -- Dark Master [Lv. 175]
@@ -871,8 +867,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Sky")
 			wait(0.1)
@@ -884,7 +878,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Sky")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Sky")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 190 or MyLevel <= 209 then -- Prisoner [Lv. 190]
@@ -895,8 +889,6 @@ function CheckQuest()
 		CFrameQuest = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
 			wait(0.1)
@@ -908,7 +900,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Prison")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 210 or MyLevel <= 249 then -- Dangerous Prisoner [Lv. 210]
@@ -920,8 +912,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
 			wait(0.1)
@@ -933,7 +923,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Prison")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 250 or MyLevel <= 299 then -- Toga Warrior [Lv. 250]
@@ -945,8 +935,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-1851, 40, -2925, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1851, 40, -2925, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Colosseum")
 			wait(0.1)
@@ -958,7 +946,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Colosseum")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Colosseum")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 300 or MyLevel <= 324 then -- Military Soldier [Lv. 300]
@@ -970,8 +958,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Magma")
 			wait(0.1)
@@ -983,7 +969,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Magma")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Magma")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 325 or MyLevel <= 374 then -- Military Spy [Lv. 325]
@@ -995,8 +981,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Magma")
 			wait(0.1)
@@ -1008,7 +992,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Magma")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Magma")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel == 375 or MyLevel <= 399 then -- Fishman Warrior [Lv. 375]
@@ -1092,8 +1076,6 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-			_G.NoClip = true
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Fountain")
 			wait(0.1)
@@ -1105,7 +1087,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Fountain")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Fountain")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif MyLevel >= 650 then -- Galley Captain [Lv. 650]
@@ -1130,7 +1112,7 @@ function CheckQuest()
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Fountain")
 			wait(0.1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Fountain")
-			_G.NoClip = false
+			wait(3)
 		end
 
 	elseif game.Players.LocalPlayer.Data.Level.Value >= 700 and not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Saber") and not game.Players.LocalPlayer.Character:FindFirstChild("Saber") then -- Saber
@@ -1153,8 +1135,6 @@ function CheckQuest()
 					else
 						local Distance = (Vector3.new(-1612, 36, 148) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance >= 1000 then
-							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 100000, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-							_G.NoClip = true
 							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1612, 36, 148)
 							game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Jungle")
 							wait(0.1)
@@ -1166,7 +1146,7 @@ function CheckQuest()
 							game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Jungle")
 							wait(0.1)
 							game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("SetLastSpawnPoint", "Jungle")
-							_G.NoClip = false
+							wait(3)
 						end
 						TP(CFrame.new(-1612, 36, 148))
 					end

@@ -134,12 +134,6 @@ function Label(Text)
 	return LabelFunction
 end
 
-local args = {
-    [1] = "EnablePvp"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
-
 
 local MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
 Stats = Label("Stats : ...")
@@ -809,11 +803,15 @@ function CheckQuest()
 						end						
 						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 					until v.Humanoid.Health <= 0 or not v.Parent
+					if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
+						game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("EnablePvp")
+						wait(10)
+					end
 					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 				end
 			end
 		end)
-	
+
 	elseif MyLevel == 120 or MyLevel <= 149 then -- Chief Petty Officer [Lv. 120]
 		Mon = "Chief Petty Officer"
 		Quest = "MarineQuest2"

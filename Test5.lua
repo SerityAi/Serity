@@ -821,6 +821,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-5038, 29, 4323, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5038, 29, 4323, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "MarineBase")
 			wait(0.1)
@@ -844,6 +846,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Sky")
 			wait(0.1)
@@ -867,6 +871,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4841, 718, -2620, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Sky")
 			wait(0.1)
@@ -889,6 +895,8 @@ function CheckQuest()
 		CFrameQuest = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
 			wait(0.1)
@@ -912,6 +920,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5310, 0, 474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Prison")
 			wait(0.1)
@@ -935,6 +945,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-1851, 40, -2925, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1851, 40, -2925, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Colosseum")
 			wait(0.1)
@@ -958,6 +970,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Magma")
 			wait(0.1)
@@ -981,6 +995,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5315, 13, 8516, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Magma")
 			wait(0.1)
@@ -1076,6 +1092,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Fountain")
 			wait(0.1)
@@ -1099,6 +1117,8 @@ function CheckQuest()
 
 		local Distance = (Vector3.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 		if Distance >= 1000 then
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+			wait(3)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Fountain")
 			wait(0.1)
@@ -1133,6 +1153,8 @@ function CheckQuest()
 					else
 						local Distance = (Vector3.new(-1612, 36, 148) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance >= 1000 then
+							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61165, 10, 1820)) -- Bypass Fishman Island
+		                	wait(3)
 							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1612, 36, 148)
 							game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF"):InvokeServer("SetLastSpawnPoint", "Jungle")
 							wait(0.1)

@@ -684,7 +684,7 @@ ValkyrieHelmet.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ValkyrieHelmet.BackgroundTransparency = 1.000
 ValkyrieHelmet.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ValkyrieHelmet.BorderSizePixel = 0
-ValkyrieHelmet.Position = UDim2.new(0.574999988, 0, 0.899999976, 0)
+ValkyrieHelmet.Position = UDim2.new(0.574999988, 0, 0.800000012, 0)
 ValkyrieHelmet.Size = UDim2.new(0, 200, 0, 30)
 ValkyrieHelmet.Font = Enum.Font.SourceSansBold
 ValkyrieHelmet.Text = "Valkyrie Helmet : ❌"
@@ -948,7 +948,7 @@ function CheckQuest()
 		CFrameMon = CFrame.new(5559, 152, 4000, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 		CFrameQuest = CFrame.new(5258, 39, 4049, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-	elseif MyLevel >= 650 then -- Galley Captain [Lv. 650]
+	elseif MyLevel == 650 or MyLevel <= 699 then -- Galley Captain [Lv. 650]
 		Mon = "Galley Captain"
 		Quest = "FountainQuest"
 		LevelQuest = 2

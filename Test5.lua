@@ -793,7 +793,7 @@ function CheckQuest()
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
 							FastAttack = true
-							TP(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(0,10,0))
 							wait(3)
 							TP(v.HumanoidRootPart.CFrame * CFrame.new(2,2,2))
 							game:GetService'VirtualUser':CaptureController()

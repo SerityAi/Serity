@@ -789,7 +789,7 @@ function CheckQuest()
 					repeat wait()
 						Haki()
 						Melee()
-						TP(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+						TP(v.HumanoidRootPart.CFrame * CFrame.new(0,10,0))
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
 							FastAttack = true

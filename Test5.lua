@@ -789,13 +789,10 @@ function CheckQuest()
 					repeat wait()
 						Haki()
 						Melee()
-						TP(v.HumanoidRootPart.CFrame * CFrame.new(0,10,0))
+						TP(v.HumanoidRootPart.CFrame * CFrame.new(2,2,2))
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
 							FastAttack = true
-							TP(v.HumanoidRootPart.CFrame * CFrame.new(0,10,0))
-							wait(3)
-							TP(v.HumanoidRootPart.CFrame * CFrame.new(2,2,2))
 							game:GetService'VirtualUser':CaptureController()
 							game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 							game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)

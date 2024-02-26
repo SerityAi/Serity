@@ -789,10 +789,13 @@ function CheckQuest()
 					repeat wait()
 						Haki()
 						Melee()
-						TP(v.HumanoidRootPart.CFrame * CFrame.new( 1,3,3))
+						TP(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
 							FastAttack = true
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+							wait(3)
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(2,2,2))
 							game:GetService'VirtualUser':CaptureController()
 							game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 							game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
@@ -807,7 +810,6 @@ function CheckQuest()
 					until v.Humanoid.Health <= 0 or not v.Parent
 					if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
 						game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("EnablePvp")
-						wait(10)
 					end
 					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
 				end

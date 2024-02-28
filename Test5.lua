@@ -26,7 +26,6 @@ repeat wait()
         end
     end)
 until not game.Players.localPlayer.Neutral
-end
 spawn(function()
     while true do wait()
         SeverKick = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick)

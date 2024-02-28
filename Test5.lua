@@ -25,7 +25,7 @@ repeat wait()
             end
         end
     end)
-until not game.Players.localPlayer.Neutral
+end
 spawn(function()
     while true do wait()
         SeverKick = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick)
@@ -36,16 +36,6 @@ spawn(function()
             end
         end)
     end
-end)
-local VirtualUser=game:service'VirtualUser'
-game:service'Players'.LocalPlayer.Idled:connect(function()
-	VirtualUser:CaptureController()
-	VirtualUser:ClickButton2(Vector2.new())
-end)
-spawn(function()
-	while wait(3) do
-		game:GetService'VirtualUser':CaptureController()
-	end
 end)
 
 -- [Ui] --

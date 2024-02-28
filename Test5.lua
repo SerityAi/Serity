@@ -1,31 +1,32 @@
 -- [Serity Hub Next Gen] --
 
+if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
+
 _G.AutoFarmLevel = true
 
 -- [Auto Team] --
 
-if not game:IsLoaded() then 
-    repeat game.Loaded:Wait()
-    until game:IsLoaded() 
-end
-_G.Team = "Pirates"
-repeat wait()
-    pcall(function()
-        if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
-            if game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Visible == true then
-                if _G.Team == "Pirates" then
+pcall(function()
+	if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
+		repeat wait()
+			if game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Visible == true then
+				if _G.Team == "Pirates" then
 					for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
-                        v.Function()
-                    end
-                else
-                    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
-                        v.Function()
-                    end
-                end
-            end
-        end
-    end)
-end
+						v.Function()
+					end
+				elseif _G.Team == "Marine" then
+					for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
+						v.Function()
+					end
+				else
+					for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
+						v.Function()
+					end
+				end
+			end
+		until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
+	end
+end)
 spawn(function()
     while true do wait()
         SeverKick = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick)

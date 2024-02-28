@@ -4,32 +4,50 @@ _G.AutoFarmLevel = true
 
 -- [Auto Team] --
 
-if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
-pcall(function()
-    if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
-    	repeat wait()
-            if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main").ChooseTeam.Visible == true then
-                if _G.Team == "Pirate" then
-                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
-                        v.Function()
-	    			end
-                elseif _G.Team == "Marine" then
-                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do
+if not game:IsLoaded() then 
+    repeat game.Loaded:Wait()
+    until game:IsLoaded() 
+end
+_G.Team = "Pirates"
+repeat wait()
+    pcall(function()
+        if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
+            if game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Visible == true then
+                if _G.Team == "Pirates" then
+					for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
                         v.Function()
                     end
                 else
-                    for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
+                    for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
                         v.Function()
                     end
-    			end
+                end
             end
-        until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
+        end
+    end)
+until not game.Players.localPlayer.Neutral
+end
+spawn(function()
+    while true do wait()
+        SeverKick = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick)
+            if SeverKick then
+                if Kick.Name == 'ErrorPrompt' and Kick:FindFirstChild('MessageArea') and Kick.MessageArea:FindFirstChild("ErrorFrame") then
+                    game:GetService("TeleportService"):Teleport(game.PlaceId)
+                end
+            end
+        end)
     end
 end)
-
--- [Load] -- 
-
-if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+	VirtualUser:CaptureController()
+	VirtualUser:ClickButton2(Vector2.new())
+end)
+spawn(function()
+	while wait(3) do
+		game:GetService'VirtualUser':CaptureController()
+	end
+end)
 
 -- [Ui] --
 

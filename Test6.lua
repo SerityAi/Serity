@@ -288,6 +288,54 @@ function TP(P)
 	end)
 end
 
+function TP(P)
+	Distance = (P.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+	if Distance < 100 then
+		Speed = 1000
+    elseif Distance < 200 then
+		Speed = 500
+    elseif Distance < 300 then
+		Speed = 400
+	elseif Distance < 500 then
+		Speed = 350
+	elseif Distance < 1000 then
+		Speed = 320
+    elseif Distance >= 1000 then
+		Speed = 320 
+    end
+
+    game:GetService("TweenService"):Create(
+		game.Players.LocalPlayer.Character.HumanoidRootPart,
+		TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
+		{CFrame = P}
+	):Play()
+end
+
+function TP2(P)
+	Distance = (P.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+	if Distance < 100 then
+		Speed = 1000
+    elseif Distance < 200 then
+		Speed = 500
+    elseif Distance < 300 then
+		Speed = 400
+	elseif Distance < 500 then
+		Speed = 350
+	elseif Distance < 1000 then
+		Speed = 320
+    elseif Distance >= 1000 then
+		Speed = 320 
+    end
+    game:GetService("TweenService"):Create(
+        game.Players.LocalPlayer.Character.HumanoidRootPart,
+        TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear),
+        {CFrame = P}
+    ):Play()
+    _G.NoClip = true
+    wait(Distance/Speed)
+    _G.NoClip = false
+end
+
 spawn(function()
 	pcall(function()
 		game:GetService("RunService").Stepped:Connect(function()

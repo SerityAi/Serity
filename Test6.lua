@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "Serity Hub " .. Fluent.Version,
+    Title = "Serity Hub ",
     SubTitle = "",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -14,7 +14,7 @@ local Window = Fluent:CreateWindow({
 
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
-    Main = Window:AddTab({ Title = "General Tab", Icon = "rbxassetid://16637657039" }),
+    Main = Window:AddTab({ Title = "General Tab", Icon = "rbxassetid://16637685852" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 

@@ -716,32 +716,7 @@ coroutine.wrap(QVGP_fake_script)()
 
 -- [Use Code] --
 
-function UseCode(Text)
-	game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
-end
-UseCode("NEWTROLL")
-UseCode("KITT_RESET")
-UseCode("Sub2CaptainMaui")
-UseCode("SUB2GAMERROBOT_RESET1")
-UseCode("kittgaming")
-UseCode("Sub2Fer999")
-UseCode("Enyu_is_Pro")
-UseCode("Magicbus")
-UseCode("JCWK")
-UseCode("Starcodeheo")
-UseCode("Bluxxy")
-UseCode("fudd10_v2")
-UseCode("FUDD10")
-UseCode("BIGNEWS") 
-UseCode("THEGREATACE")
-UseCode("SUB2GAMERROBOT_EXP1") 
-UseCode("Sub2OfficialNoobie")
-UseCode("StrawHatMaine") 
-UseCode("SUB2NOOBMASTER123")
-UseCode("Sub2UncleKizaru") 
-UseCode("Sub2Daigrock")
-UseCode("Axiore") 
-UseCode("TantaiGaming")
+
 
 -- [Check Quest] --
 
@@ -797,9 +772,16 @@ function CheckQuest()
 					repeat wait()
 						Haki()
 						Melee()
-						TP(v.HumanoidRootPart.CFrame * CFrame.new(2,2,2))
+						TP(v.HumanoidRootPart.CFrame * CFrame.new(0,0,0))
 						local Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
 						if Distance < 10 then
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(3,2,3))
+							wait(.1)
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(-3,2,3))
+							wait(.1)
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(-3,2,-3))
+							wait(.1)
+							TP(v.HumanoidRootPart.CFrame * CFrame.new(3,2,-3))
 							FastAttack = true
 							game:GetService'VirtualUser':CaptureController()
 							game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -811,6 +793,7 @@ function CheckQuest()
 							wait(0.1)
 							game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
 						end						
+						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(60,60,60)
 					until v.Humanoid.Health <= 0 or not v.Parent
 					if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
@@ -2032,7 +2015,8 @@ spawn(function()
 		pcall(function()
 			if _G.AutoFarmLevel then
 				CheckQuest()
-				if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+				local MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
+				if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false and (MyLevel <= 9 or MyLevel >= 90 ) then
 					TP(CFrameQuest)
 					if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",Quest,LevelQuest)

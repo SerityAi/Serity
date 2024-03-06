@@ -1418,10 +1418,8 @@ spawn(function()
 	while wait(.1) do
 		if game.Players.LocalPlayer.Data.Stats.Melee.Level.Value <= 2549 then
 			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Melee", 1)
-		until game.Players.LocalPlayer.Data.Stats.Melee.Level.Value == 2550
 	elseif  game.Players.LocalPlayer.Data.Stats.Defense.Level.Value <= 2549 then
 				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint", "Defense", 1)
-			until game.Players.LocalPlayer.Data.Stats.Defense.Level.Value == 2550
 		end
 	end
 end)

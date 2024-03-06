@@ -1096,7 +1096,7 @@ do
         "Sword",
         "Blox Fruit"
     }
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
+    local Dropdown = Tabs.GeneralTab:AddDropdown("Dropdown", {
         Title = "Select Weapon",
         Values = Weapons,
         Multi = false,
@@ -1113,7 +1113,7 @@ do
 
     -- [Auto Farm Level] --
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Farm Level", Default = false })
+    local Toggle = Tabs.GeneralTab:AddToggle("MyToggle", {Title = "Auto Farm Level", Default = false })
     Toggle:OnChanged(function()
         _G.AutoFarmLevel = Value
         if Value == false then

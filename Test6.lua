@@ -98,6 +98,286 @@ Tab1:AddDropdown('MyDropdown', {
     Tooltip = 'This is a tooltip', -- Information shown when you hover over the textbox
 })
 
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'Bringmob',
+    Default = false, -- Default value (true / false)
+    Tooltip = 'Kill monster at once!', -- Information shown when you hover over the toggle
+
+    Callback = function(Value)
+        getgenv().bringmob = Value
+    end
+})
+
 Options.MyDropdown:OnChanged(function()
     print('Dropdown got changed. New value:', Options.MyDropdown.Value)
 end)

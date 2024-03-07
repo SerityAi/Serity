@@ -49,7 +49,6 @@ elseif placeId == 4442272183 then
 elseif placeId == 7449423635 then
 	World3 = true
 end
-do
 
 local MaterialMethod
 if World1 then
@@ -148,6 +147,7 @@ function CheckMaterial()
 	end
 end
 
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -178,8 +178,6 @@ local Tabs = {
 }
 
 local Options = Fluent.Options
-
-end
 
 do
 	Fluent:Notify({

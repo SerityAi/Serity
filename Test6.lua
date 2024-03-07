@@ -1,5 +1,3 @@
-
-
 DevilFruitTable = {
 	"Rocket-Rocket",
 	"Spin-Spin", 
@@ -50,6 +48,7 @@ elseif placeId == 4442272183 then
 	World2 = true
 elseif placeId == 7449423635 then
 	World3 = true
+end
 do
 
 local MaterialMethod
@@ -84,7 +83,6 @@ elseif World3 then
 		"Radioactive Material",
 	}
 end
-
 
 function CheckMaterial()
 	if _G.SelectMaterial == "Radioactive Material" then
@@ -180,6 +178,8 @@ local Tabs = {
 }
 
 local Options = Fluent.Options
+
+end
 
 do
 	Fluent:Notify({
@@ -555,7 +555,7 @@ do
 	--- DevilFruitsESP 
 	local TDevilFruits ESP = Tabs.Esp:AddToggle("MyToggle", {Title = "- Devil Fruits ESP", Default = false })
 
-	TDevilFruits ESP:OnChanged(function()
+	TDevilFruitsESP:OnChanged(function()
 		_G.DevilFruitsESP  = Options.MyToggle.Value
 	end)
 
@@ -585,7 +585,7 @@ do
 	--- - Auto Buy Fruits
 	local TAutoBuyFruits ESP = Tabs.Esp:AddToggle("MyToggle", {Title = "- Auto Buy Fruits", Default = false })
 
-	TAutoBuyFruits ESP:OnChanged(function()
+	TAutoBuyFruitsESP:OnChanged(function()
 		_G.AutoBuyFruits  = Options.MyToggle.Value
 	end)
 
@@ -2853,3 +2853,4 @@ function HopLowerServer()
 end
 
 -- [End Code] --
+

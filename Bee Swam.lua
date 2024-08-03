@@ -1432,11 +1432,11 @@ end)
 
 GeneralRight:AddSeperator("Settings")
 
-GeneralRight:AddSlider("ความเร็ว", 300, 1000, 500,function(Value)
+GeneralRight:AddSlider("ความเร็ว", 0, 300, 50,function(Value)
     Speed = Value
 end)
 
-GeneralRight:AddSlider("ระยะวาป", 100, 500, 250,function(Value)
+GeneralRight:AddSlider("ระยะวาป", 0, 250, 50,function(Value)
     DistanceWarp = Value
 end)
 
@@ -1452,7 +1452,7 @@ function Teleport(P)
                         TweenInfo.new((game.Players.LocalPlayer.Character.Root.Position - P.Position).Magnitude/Speed, Enum.EasingStyle.Linear),
                         {CFrame = P}
                     ):Play()
-                    if (game.Players.LocalPlayer.Character.Root.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > DistanceWarp then
+                    if (game.Players.LocalPlayer.Character.Root.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 150 then
                         game.Players.LocalPlayer.Character.Root:Destroy()
                     else
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.Root.CFrame
@@ -1466,7 +1466,7 @@ function Teleport(P)
                     R.CanCollide = false
                     R.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,30,0)
                 end
-                if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - P.Position).Magnitude <= 100 then
+                if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - P.Position).Magnitude <= DistanceWarp then
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
                 end
             end
